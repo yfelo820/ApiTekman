@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Publish\**" />
+    <Content Remove="Publish\**" />
+    <EmbeddedResource Remove="Publish\**" />
+    <None Remove="Publish\**" />
+  </ItemGroup>  
+  <ItemGroup>
+    <Compile Remove="Databases\Schools\Migrations\20210812185422_AddTeacherAndTeacherGroupTables.cs" />
+    <Compile Remove="Databases\Schools\Migrations\20210812185422_AddTeacherAndTeacherGroupTables.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.2.1" />
+    <PackageReference Include="FluentEmail.Core" Version="2.5.1" />
+    <PackageReference Include="FluentEmail.Razor" Version="2.5.0" />
+    <PackageReference Include="FluentEmail.Smtp" Version="2.5.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.14.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Azure.SignalR" Version="1.0.14" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Quartz" Version="3.0.6" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Emails\Templates\Welcome.cshtml" />
+    <EmbeddedResource Include="Emails\Templates\ResetPassword.cshtml" />
+    <EmbeddedResource Include="Emails\Templates\RegisterConfirmation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Emails\Templates\RegisterConfirmation.cshtml" />
+    <Content Remove="Emails\Templates\ResetPassword.cshtml" />
+    <Content Remove="Emails\Templates\Welcome.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dockerfile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Locale.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Locale.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Locale.ca-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Locale.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Locale.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Locale.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Locale.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

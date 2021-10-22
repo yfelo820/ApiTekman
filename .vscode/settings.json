@@ -1,0 +1,25 @@
+{
+	"files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.user": true,
+        "**/*.vspscc": true,
+        "**/*.defaults": true,
+        "bower_components": true,
+        "**/obj": true,
+        "Service References": true,
+        "Properties" : true,
+        "ApplicationInsights.config": true,
+		".bin": true,
+		"bin": true,
+		"**/*.Designer.cs": true,
+        ".vscode": true
+    },
+    "editor.rulers": [
+        100,
+        250
+    ],
+    "csharp.referencesCodeLens.enabled": false
+}
